@@ -1,0 +1,47 @@
+{
+    "name": "MedicalCase",
+    "fields": [
+        {
+            "fieldName": "consultedDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "diagnosed",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "note",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "dMSRecord",
+            "otherEntityRelationshipName": "medicalCase",
+            "relationshipName": "dmsRecords"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "patient",
+            "otherEntityRelationshipName": "medicalCases",
+            "relationshipName": "patient",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191223082545",
+    "entityTableName": "medical_case",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "patientmicroservice",
+    "applications": "*",
+    "microserviceName": "patientmicroservice"
+}

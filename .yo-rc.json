@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.bytatech.patientservice",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "microservice",
+    "baseName": "patientmicroservice",
+    "packageName": "com.bytatech.patientservice",
+    "packageFolder": "com/bytatech/patientservice",
+    "serverPort": "8099",
+    "authenticationType": "oauth2",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MjBiYWU3NzgwOWU1MDg0NTU3YzE4YWYzYTgxZDc4ZjhmYTdjNTg0MjEyMWY0ZDIzOGFhZDgyMTFhODM0NTM5MjQ3MGY0YjIxZjEzMGFmMTQzOGEzYzZhNmI5Mzc1MTc0NjRiYzJmNTBlNWJhYTdiMGY2MTQ1M2NhZTQ2MTRmNjI=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1577086087690,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": ["en"],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
