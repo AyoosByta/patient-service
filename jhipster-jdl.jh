@@ -1,0 +1,35 @@
+
+
+
+entity Patient{
+    imageLink String ,
+	phoneNumber Long,
+	idpCode String,
+	dob LocalDate,
+    location String,
+    createdDate LocalDate,
+    dmsId String
+  }
+
+
+    entity MedicalCase{
+    consultedDate LocalDate,
+    createdDate LocalDate,
+    diagnosed String,
+    note String
+    }
+    entity DMSRecord{
+    prescriptionRef String
+    }
+
+relationship OneToMany{
+
+	Patient {medicalCases} to  MedicalCase,
+    MedicalCase {dmsRecords} to  DMSRecord
+    }
+
+paginate * with pagination
+
+dto * with mapstruct
+
+service all with serviceImpl

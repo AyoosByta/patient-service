@@ -1,0 +1,29 @@
+{
+    "name": "DMSRecord",
+    "fields": [
+        {
+            "fieldName": "prescriptionRef",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "medicalCase",
+            "otherEntityRelationshipName": "dmsRecords",
+            "relationshipName": "medicalCase",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191223082546",
+    "entityTableName": "dms_record",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "patientmicroservice",
+    "applications": "*",
+    "microserviceName": "patientmicroservice"
+}
