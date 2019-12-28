@@ -1,6 +1,6 @@
 version: '2'
 services:
-  patientmicroservice-sonar:
+  patientservice-sonar:
     image: sonarqube:7.9.1-community
     ports:
       - 9001:9000

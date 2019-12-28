@@ -1,6 +1,6 @@
 package com.bytatech.patientservice.web.rest;
 
-import com.bytatech.patientservice.PatientmicroserviceApp;
+import com.bytatech.patientservice.PatientServiceApp;
 import com.bytatech.patientservice.config.TestSecurityConfiguration;
 import com.bytatech.patientservice.domain.DMSRecord;
 import com.bytatech.patientservice.repository.DMSRecordRepository;
@@ -34,7 +34,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link DMSRecordResource} REST controller.
  */
-@SpringBootTest(classes = {PatientmicroserviceApp.class, TestSecurityConfiguration.class})
+@SpringBootTest(classes = {PatientServiceApp.class, TestSecurityConfiguration.class})
 public class DMSRecordResourceIT {
 
     private static final String DEFAULT_PRESCRIPTION_REF = "AAAAAAAAAA";

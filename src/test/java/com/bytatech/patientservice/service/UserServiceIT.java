@@ -1,6 +1,6 @@
 package com.bytatech.patientservice.service;
 
-import com.bytatech.patientservice.PatientmicroserviceApp;
+import com.bytatech.patientservice.PatientServiceApp;
 import com.bytatech.patientservice.config.Constants;
 import com.bytatech.patientservice.config.TestSecurityConfiguration;
 import com.bytatech.patientservice.domain.User;
@@ -32,7 +32,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for {@link UserService}.
  */
-@SpringBootTest(classes = {PatientmicroserviceApp.class, TestSecurityConfiguration.class})
+@SpringBootTest(classes = {PatientServiceApp.class, TestSecurityConfiguration.class})
 @Transactional
 public class UserServiceIT {
 

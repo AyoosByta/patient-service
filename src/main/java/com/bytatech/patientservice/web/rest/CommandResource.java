@@ -4,9 +4,12 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /*import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;*/
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.openfeign.FeignClientsConfiguration;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.io.ByteArrayResource;
@@ -22,6 +25,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bytatech.patientservice.service.PatientService;
+import com.bytatech.patientservice.service.CommandService;
 /*import com.bytatech.ayoos.client.custom_dms_core.ApiKeyRequestInterceptor;
 import com.bytatech.ayoos.client.custom_dms_core.api.SitesApi;
 import com.bytatech.ayoos.client.auth_dms.api.AuthenticationApi;
@@ -45,21 +50,23 @@ import feign.RequestTemplate;
 import feign.auth.BasicAuthRequestInterceptor;
 import feign.codec.Decoder;
 import feign.codec.Encoder;
+import io.github.jhipster.web.util.HeaderUtil;
 import feign.Feign;
 import feign.auth.BasicAuthRequestInterceptor;
 import feign.codec.Decoder;
 import feign.codec.Encoder;
 import org.springframework.core.io.Resource;
+import com.bytatech.patientservice.service.PatientService;
+import com.bytatech.patientservice.web.rest.errors.BadRequestAlertException;
+import com.bytatech.patientservice.service.dto.PatientDTO;
 
 @RestController
 @RequestMapping("/api/commands")
 
 public class CommandResource {
 
-	/*private final Logger log = LoggerFactory.getLogger(CommandResource.class);
 
-	private static final String ENTITY_NAME = "Patient";
-	
+	/*
 	@Autowired
 	private CommandService commandService;
 	
@@ -91,6 +98,21 @@ public class CommandResource {
 	private  MedicalCaseService medicalCaseService;
 	@Autowired
 	UserService userService;*/
+	   private final Logger log = LoggerFactory.getLogger(CommandResource.class);
+	 private static final String ENTITY_NAME = "patientmicroservicePatient";
+
+	    @Value("${jhipster.clientApp.name}")
+	    private String applicationName;
+		@Autowired
+	    private  PatientService patientService;
+	
+		@Autowired
+		private CommandService commandService;
+		
+		
+	
+	
+	
 	@GetMapping("/patients")
 	public String test() {
 		return "success";
@@ -107,24 +129,27 @@ public class CommandResource {
 	 *             if the Location URI syntax is incorrect
 	 */
 
-	/*@PostMapping("/patients-dms")
+	@PostMapping("/patients-dms")
 	public ResponseEntity<PatientDTO> createPatientWithDMS(@RequestBody PatientDTO patientDTO) throws URISyntaxException {
-		log.debug("REST request to save Patient : {}", patientDTO);
-		if (patientDTO.getId() != null) {
-			throw new BadRequestAlertException("A new patient cannot already have an ID", ENTITY_NAME, "idexists");
-		}
-		//commandService.createPersonOnDMS(patientDTO);
+		 log.debug("REST request to save Patient : {}", patientDTO);
+	        if (patientDTO.getId() != null) {
+	            throw new BadRequestAlertException("A new patient cannot already have an ID", ENTITY_NAME, "idexists");
+	        }
+	     
+	    //commandService.createPersonOnDMS(patientDTO);
 
 		String siteId = patientDTO.getIdpCode() + "site";
 
 		String dmsId = commandService.createSite(siteId);
 		patientDTO.setDmsId(dmsId);
-		commandService.createSiteMembership(dmsId, patientDTO.getIdpCode());
+	//	commandService.createSiteMembership(dmsId, patientDTO.getIdpCode());
 		PatientDTO result = patientService.save(patientDTO);
 
-		return ResponseEntity.ok().headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, result.getId().toString()))
-				.body(result);
-	}*/
+		 return ResponseEntity.created(new URI("/api/patients/" + result.getId()))
+		            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
+		            .body(result);
+			
+	}
 
 	
 
