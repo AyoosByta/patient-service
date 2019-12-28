@@ -15,7 +15,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20191223082546",
+    "changelogDate": "20191227103946",
     "entityTableName": "dms_record",
     "dto": "mapstruct",
     "pagination": "pagination",
@@ -23,7 +23,7 @@
     "jpaMetamodelFiltering": false,
     "fluentMethods": true,
     "readOnly": false,
-    "clientRootFolder": "patientmicroservice",
+    "clientRootFolder": "patientService",
     "applications": "*",
-    "microserviceName": "patientmicroservice"
+    "microserviceName": "patientService"
 }

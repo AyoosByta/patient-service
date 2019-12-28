@@ -38,7 +38,7 @@
             "relationshipName": "medicalCases"
         }
     ],
-    "changelogDate": "20191223082544",
+    "changelogDate": "20191227103944",
     "entityTableName": "patient",
     "dto": "mapstruct",
     "pagination": "pagination",
@@ -46,7 +46,7 @@
     "jpaMetamodelFiltering": false,
     "fluentMethods": true,
     "readOnly": false,
-    "clientRootFolder": "patientmicroservice",
+    "clientRootFolder": "patientService",
     "applications": "*",
-    "microserviceName": "patientmicroservice"
+    "microserviceName": "patientService"
 }

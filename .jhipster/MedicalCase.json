@@ -33,7 +33,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20191223082545",
+    "changelogDate": "20191227103945",
     "entityTableName": "medical_case",
     "dto": "mapstruct",
     "pagination": "pagination",
@@ -41,7 +41,7 @@
     "jpaMetamodelFiltering": false,
     "fluentMethods": true,
     "readOnly": false,
-    "clientRootFolder": "patientmicroservice",
+    "clientRootFolder": "patientService",
     "applications": "*",
-    "microserviceName": "patientmicroservice"
+    "microserviceName": "patientService"
 }

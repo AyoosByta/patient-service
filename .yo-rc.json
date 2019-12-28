@@ -6,7 +6,7 @@
     },
     "jhipsterVersion": "6.6.0",
     "applicationType": "microservice",
-    "baseName": "patientmicroservice",
+    "baseName": "patientService",
     "packageName": "com.bytatech.patientservice",
     "packageFolder": "com/bytatech/patientservice",
     "serverPort": "8099",
@@ -22,9 +22,9 @@
     "serviceDiscoveryType": "eureka",
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "MjBiYWU3NzgwOWU1MDg0NTU3YzE4YWYzYTgxZDc4ZjhmYTdjNTg0MjEyMWY0ZDIzOGFhZDgyMTFhODM0NTM5MjQ3MGY0YjIxZjEzMGFmMTQzOGEzYzZhNmI5Mzc1MTc0NjRiYzJmNTBlNWJhYTdiMGY2MTQ1M2NhZTQ2MTRmNjI=",
+    "jwtSecretKey": "MThjMjFiZDVlYjg5MDM3MWRiNjYwMjg5MjBkOWM5MzgzZjNkZmYwMjgyZjE2NWE4ZDRhYTc4OTcxY2U1MjhiZmViODI2ZmNjM2Q4ZDEzNGE3YzFhZTkyMWFiODQyNDM5YTVlOTZiOTRiOTVlYzNiZDc5Zjc1ODY4N2FmZDdmMTA=",
     "embeddableLaunchScript": false,
-    "creationTimestamp": 1577086087690,
+    "creationTimestamp": 1577442458797,
     "testFrameworks": [],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
@@ -33,9 +33,17 @@
     "enableTranslation": true,
     "clientPackageManager": "npm",
     "nativeLanguage": "en",
-    "languages": ["en"],
+    "languages": [
+      "en"
+    ],
     "blueprints": [],
     "skipClient": true,
     "skipUserManagement": true
+  },
+  "generator-jhipster-swagger-cli": {
+    "promptValues": {
+      "inputSpec": "/home/rafeek-jamshiya/alfresco-community/tomcat/webapps/api-explorer/definitions/alfresco-core.json",
+      "cliName": "dmscore"
+    }
   }
 }

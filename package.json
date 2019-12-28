@@ -1,7 +1,7 @@
 {
-  "name": "patientmicroservice",
+  "name": "patient-service",
   "version": "0.0.0",
-  "description": "Description for patientmicroservice",
+  "description": "Description for patientService",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

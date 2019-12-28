@@ -14,11 +14,11 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191223082544_added_entity_Patient.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191223082545_added_entity_MedicalCase.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191223082546_added_entity_DMSRecord.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191227103944_added_entity_Patient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191227103945_added_entity_MedicalCase.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191227103946_added_entity_DMSRecord.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
-    <include file="config/liquibase/changelog/20191223082545_added_entity_constraints_MedicalCase.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191223082546_added_entity_constraints_DMSRecord.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191227103945_added_entity_constraints_MedicalCase.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191227103946_added_entity_constraints_DMSRecord.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

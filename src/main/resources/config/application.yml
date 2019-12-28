@@ -24,8 +24,8 @@ eureka:
     instance-info-replication-interval-seconds: 10
     registry-fetch-interval-seconds: 10
   instance:
-    appname: patientmicroservice
-    instanceId: patientmicroservice:${spring.application.instance-id:${random.value}}
+    appname: patientservice
+    instanceId: patientservice:${spring.application.instance-id:${random.value}}
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
     status-page-url-path: ${management.endpoints.web.base-path}/info
@@ -42,7 +42,7 @@ ribbon:
     enabled: true
 feign:
   hystrix:
-    enabled: true
+    enabled: false
   # client:
   #     config:
   #         default:
@@ -104,7 +104,7 @@ management:
 
 spring:
   application:
-    name: patientmicroservice
+    name: patientService
   jmx:
     enabled: false
   data:
@@ -129,13 +129,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: patientmicroservice-task-
+      thread-name-prefix: patient-service-task-
       pool:
         core-size: 2
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: patientmicroservice-scheduling-
+      thread-name-prefix: patient-service-scheduling-
       pool:
         size: 2
   thymeleaf:
@@ -173,7 +173,7 @@ info:
 
 jhipster:
   clientApp:
-    name: 'patientmicroserviceApp'
+    name: 'patientServiceApp'
   # By default CORS is disabled. Uncomment to enable.
   # cors:
   #     allowed-origins: "*"
@@ -183,11 +183,11 @@ jhipster:
   #     allow-credentials: true
   #     max-age: 1800
   mail:
-    from: patientmicroservice@localhost
+    from: patientService@localhost
   swagger:
     default-include-pattern: /api/.*
-    title: patientmicroservice API
-    description: patientmicroservice API documentation
+    title: patientService API
+    description: patientService API documentation
     version: 0.0.1
     terms-of-service-url:
     contact-name:
@@ -210,3 +210,9 @@ jhipster:
 # ===================================================================
 
 # application:
+dmscore:
+   security:
+      basicAuth:
+         username: microservice7008@gmail.com
+         password: 6g0to4ca7j
+

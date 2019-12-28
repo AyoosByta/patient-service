@@ -1,6 +1,6 @@
 package com.bytatech.patientservice.config.timezone;
 
-import com.bytatech.patientservice.PatientmicroserviceApp;
+import com.bytatech.patientservice.PatientServiceApp;
 import com.bytatech.patientservice.config.TestSecurityConfiguration;
 import com.bytatech.patientservice.repository.timezone.DateTimeWrapper;
 import com.bytatech.patientservice.repository.timezone.DateTimeWrapperRepository;
@@ -21,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for the UTC Hibernate configuration.
  */
-@SpringBootTest(classes = {PatientmicroserviceApp.class, TestSecurityConfiguration.class})
+@SpringBootTest(classes = {PatientServiceApp.class, TestSecurityConfiguration.class})
 public class HibernateTimeZoneIT {
 
     @Autowired

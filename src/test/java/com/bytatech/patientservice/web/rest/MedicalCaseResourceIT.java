@@ -1,6 +1,6 @@
 package com.bytatech.patientservice.web.rest;
 
-import com.bytatech.patientservice.PatientmicroserviceApp;
+import com.bytatech.patientservice.PatientServiceApp;
 import com.bytatech.patientservice.config.TestSecurityConfiguration;
 import com.bytatech.patientservice.domain.MedicalCase;
 import com.bytatech.patientservice.repository.MedicalCaseRepository;
@@ -36,7 +36,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link MedicalCaseResource} REST controller.
  */
-@SpringBootTest(classes = {PatientmicroserviceApp.class, TestSecurityConfiguration.class})
+@SpringBootTest(classes = {PatientServiceApp.class, TestSecurityConfiguration.class})
 public class MedicalCaseResourceIT {
 
     private static final LocalDate DEFAULT_CONSULTED_DATE = LocalDate.ofEpochDay(0L);

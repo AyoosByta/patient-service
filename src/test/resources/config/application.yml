@@ -17,15 +17,15 @@ eureka:
   client:
     enabled: false
   instance:
-    appname: patientmicroservice
-    instanceId: patientmicroservice:${spring.application.instance-id:${random.value}}
+    appname: patientService
+    instanceId: patientService:${spring.application.instance-id:${random.value}}
 
 spring:
   application:
-    name: patientmicroservice
+    name: patientService
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:patientmicroservice;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:patientService;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     name:
     username:
     password:
@@ -62,13 +62,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: patientmicroservice-task-
+      thread-name-prefix: patient-service-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: patientmicroservice-scheduling-
+      thread-name-prefix: patient-service-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -93,7 +93,7 @@ server:
 
 jhipster:
   clientApp:
-    name: 'patientmicroserviceApp'
+    name: 'patientServiceApp'
   logging:
     # To test json console appender
     use-json-format: true # By default, logs are in Json format

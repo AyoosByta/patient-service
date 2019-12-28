@@ -33,7 +33,7 @@ public class DMSRecordResource {
 
     private final Logger log = LoggerFactory.getLogger(DMSRecordResource.class);
 
-    private static final String ENTITY_NAME = "patientmicroserviceDmsRecord";
+    private static final String ENTITY_NAME = "patientServiceDmsRecord";
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;

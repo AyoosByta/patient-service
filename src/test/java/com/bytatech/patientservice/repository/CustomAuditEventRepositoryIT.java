@@ -1,6 +1,6 @@
 package com.bytatech.patientservice.repository;
 
-import com.bytatech.patientservice.PatientmicroserviceApp;
+import com.bytatech.patientservice.PatientServiceApp;
 import com.bytatech.patientservice.config.Constants;
 import com.bytatech.patientservice.config.TestSecurityConfiguration;
 import com.bytatech.patientservice.config.audit.AuditEventConverter;
@@ -28,7 +28,7 @@ import static com.bytatech.patientservice.repository.CustomAuditEventRepository.
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = {PatientmicroserviceApp.class, TestSecurityConfiguration.class})
+@SpringBootTest(classes = {PatientServiceApp.class, TestSecurityConfiguration.class})
 @Transactional
 public class CustomAuditEventRepositoryIT {
 

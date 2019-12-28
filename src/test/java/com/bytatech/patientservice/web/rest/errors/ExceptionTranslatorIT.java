@@ -1,6 +1,6 @@
 package com.bytatech.patientservice.web.rest.errors;
 
-import com.bytatech.patientservice.PatientmicroserviceApp;
+import com.bytatech.patientservice.PatientServiceApp;
 import com.bytatech.patientservice.config.TestSecurityConfiguration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests {@link ExceptionTranslator} controller advice.
  */
-@SpringBootTest(classes = {PatientmicroserviceApp.class, TestSecurityConfiguration.class})
+@SpringBootTest(classes = {PatientServiceApp.class, TestSecurityConfiguration.class})
 public class ExceptionTranslatorIT {
 
     @Autowired
