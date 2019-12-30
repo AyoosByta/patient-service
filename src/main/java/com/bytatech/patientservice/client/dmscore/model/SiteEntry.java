@@ -17,68 +17,67 @@ import javax.validation.constraints.*;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2019-12-27T16:47:46.546+05:30[Asia/Kolkata]")
 
 public class SiteEntry   {
-  @JsonProperty("entry")
-  private Site entry = null;
+	  @JsonProperty("entry")
+	  private Site entry = null;
 
-  public SiteEntry entry(Site entry) {
-    this.entry = entry;
-    return this;
-  }
+	  public SiteEntry entry(Site entry) {
+	    this.entry = entry;
+	    return this;
+	  }
 
-  /**
-   * Get entry
-   * @return entry
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+	  /**
+	   * Get entry
+	   * @return entry
+	  **/
+	  @ApiModelProperty(required = true, value = "")
+	  @NotNull
 
-  @Valid
+	  @Valid
 
-  public Site getEntry() {
-    return entry;
-  }
+	  public Site getEntry() {
+	    return entry;
+	  }
 
-  public void setEntry(Site entry) {
-    this.entry = entry;
-  }
+	  public void setEntry(Site entry) {
+	    this.entry = entry;
+	  }
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SiteEntry siteEntry = (SiteEntry) o;
-    return Objects.equals(this.entry, siteEntry.entry);
-  }
+	  @Override
+	  public boolean equals(java.lang.Object o) {
+	    if (this == o) {
+	      return true;
+	    }
+	    if (o == null || getClass() != o.getClass()) {
+	      return false;
+	    }
+	    SiteEntry siteEntry = (SiteEntry) o;
+	    return Objects.equals(this.entry, siteEntry.entry);
+	  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(entry);
-  }
+	  @Override
+	  public int hashCode() {
+	    return Objects.hash(entry);
+	  }
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SiteEntry {\n");
-    
-    sb.append("    entry: ").append(toIndentedString(entry)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
+	  @Override
+	  public String toString() {
+	    StringBuilder sb = new StringBuilder();
+	    sb.append("class SiteEntry {\n");
+	    
+	    sb.append("    entry: ").append(toIndentedString(entry)).append("\n");
+	    sb.append("}");
+	    return sb.toString();
+	  }
 
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-}
-
+	  /**
+	   * Convert the given object to string with each line indented by 4 spaces
+	   * (except the first line).
+	   */
+	  private String toIndentedString(java.lang.Object o) {
+	    if (o == null) {
+	      return "null";
+	    }
+	    return o.toString().replace("\n", "\n    ");
+	  }
+	}
