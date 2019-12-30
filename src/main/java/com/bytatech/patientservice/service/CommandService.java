@@ -1,7 +1,8 @@
 package com.bytatech.patientservice.service;
 
-/*import com.bytatech.ayoos.client.dms_core.model.SiteMemberEntry;
-import com.bytatech.ayoos.service.dto.DMSRecordDTO;*/
+import com.bytatech.patientservice.client.dmscore.model.SiteBodyCreate;
+import com.bytatech.patientservice.client.dmscore.model.SiteMemberEntry;
+/*import com.bytatech.ayoos.service.dto.DMSRecordDTO;*/
 import com.bytatech.patientservice.service.dto.PatientDTO;
 
 import org.springframework.data.domain.Page;
@@ -62,9 +63,10 @@ public interface CommandService {
 	
 	/*public String addPrescriptionOnDMS(byte[] file, String dmsId);
 
-	public void createPersonOnDMS(PatientDTO patientDTO);
+	
 */
 	public String createSite(String siteId);
-
-	//public SiteMemberEntry createSiteMembership(String siteId, String idpCode);
+	
+	public void createPersonOnDMS(PatientDTO patientDTO);
+	public SiteMemberEntry createSiteMembership(String siteId, String idpCode);
 }

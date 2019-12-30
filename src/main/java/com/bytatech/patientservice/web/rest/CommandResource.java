@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bytatech.patientservice.service.PatientService;
 import com.bytatech.patientservice.service.CommandService;
+import com.bytatech.patientservice.client.dmscore.model.SiteBodyCreate;
 /*import com.bytatech.ayoos.client.custom_dms_core.ApiKeyRequestInterceptor;
 import com.bytatech.ayoos.client.custom_dms_core.api.SitesApi;
 import com.bytatech.ayoos.client.auth_dms.api.AuthenticationApi;
@@ -43,7 +44,7 @@ import com.bytatech.ayoos.client.dms_core.model.SiteMemberEntry;
 import com.bytatech.ayoos.client.dms_core.model.SiteMembershipBodyCreate;
 import com.bytatech.ayoos.client.dms_core.model.SiteMembershipBodyCreate.RoleEnum;
 import com.bytatech.ayoos.client.dms_core.model.SiteBodyCreate;*/
-
+import com.bytatech.patientservice.client.dmscore.model.SiteMemberEntry;
 
 import feign.Feign;
 import feign.RequestTemplate;
@@ -65,7 +66,7 @@ import com.bytatech.patientservice.service.dto.PatientDTO;
 
 public class CommandResource {
 
-
+	
 	/*
 	@Autowired
 	private CommandService commandService;
@@ -136,13 +137,14 @@ public class CommandResource {
 	            throw new BadRequestAlertException("A new patient cannot already have an ID", ENTITY_NAME, "idexists");
 	        }
 	     
-	    //commandService.createPersonOnDMS(patientDTO);
+	    commandService.createPersonOnDMS(patientDTO);
 
 		String siteId = patientDTO.getIdpCode() + "site";
 
 		String dmsId = commandService.createSite(siteId);
 		patientDTO.setDmsId(dmsId);
-	//	commandService.createSiteMembership(dmsId, patientDTO.getIdpCode());
+	
+		commandService.createSiteMembership(patientDTO.getDmsId(), patientDTO.getIdpCode());
 		PatientDTO result = patientService.save(patientDTO);
 
 		 return ResponseEntity.created(new URI("/api/patients/" + result.getId()))
@@ -150,9 +152,7 @@ public class CommandResource {
 		            .body(result);
 			
 	}
-
 	
-
 	/**
      * PUT  /patients : Updates an existing patient.
      *

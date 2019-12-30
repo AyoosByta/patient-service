@@ -50,11 +50,13 @@ public class CommandServiceImpl implements CommandService {
 	@Autowired
 	com.bytatech.patientservice.client.custom_dms_core.api.NodesApi nodesApi;
 	
-	@Autowired
-	PeopleApi peopleApi;
+
 	
 	@Autowired
 	com.bytatech.patientservice.client.dms_core.api.SitesApi siteApi;*/
+	@Autowired
+	PeopleApi peopleApi;
+    
 	@Autowired
 	DMSRecordService dMSRecordService ;
 	@Autowired
@@ -70,6 +72,7 @@ public class CommandServiceImpl implements CommandService {
 		nodesApi.updateNodeContent(nodeEntry.getEntry().getId(), prescriptionResource, true, null, null, null, null);
 		return nodeEntry.getEntry().getId();
 	}*/
+
     
     /**
 	 * Create a new people on DMS.
@@ -78,18 +81,18 @@ public class CommandServiceImpl implements CommandService {
 	 * 
 	 *
 	 */
-/*	public void createPersonOnDMS(PatientDTO patientDTO) {
-		log.debug("createPersonOnDMS : {}", patientDTO);
+	public void createPersonOnDMS(PatientDTO patientDTO) {
+	//	log.debug("createPersonOnDMS : {}", patientDTO);
 
 		PersonBodyCreate personBodyCreate = new PersonBodyCreate();
 		personBodyCreate.setId(patientDTO.getIdpCode());
 		personBodyCreate.setFirstName(patientDTO.getIdpCode());
-		personBodyCreate.setEmail(patientDTO.getIdpCode() + "@gmail.com");
+		personBodyCreate.setEmail(patientDTO.getIdpCode()+"@gmail.com");
 		personBodyCreate.setPassword(patientDTO.getIdpCode());
 		personBodyCreate.setEnabled(true);
 		ResponseEntity<PersonEntry> p = peopleApi.createPerson(personBodyCreate, null);
 
-	}*/
+	}
 	/**
 	 * Create a new patientDMS-Site.
 	 *
@@ -100,12 +103,16 @@ public class CommandServiceImpl implements CommandService {
 
 	
 	public String createSite(String siteId) {
+		
 		SiteBodyCreate siteBodyCreate = new SiteBodyCreate();
 		siteBodyCreate.setTitle(siteId);
 		siteBodyCreate.setId(siteId);
 		siteBodyCreate.setVisibility(VisibilityEnum.MODERATED);
-		ResponseEntity<SiteEntry> entry = siteApi.createSite(siteBodyCreate, false, false, new ArrayList());
-		return entry.getBody().getEntry().getId();
+		
+		ResponseEntity<SiteEntry> entry = siteApi.createSite(siteBodyCreate, false, false, null);
+	//	System.out.println("entryyyyyyyyyy"+entry.getBody().getEntry());
+		
+		return entry.getBody().getEntry().getId() ;
 	}
 	/**
 	 * Create a new site membership -.
@@ -114,10 +121,10 @@ public class CommandServiceImpl implements CommandService {
 	 * 
 	 *
 	 */
-	/*public SiteMemberEntry createSiteMembership(String siteId, String idpCode) {
+	public SiteMemberEntry createSiteMembership(String siteId, String idpCode) {
 		SiteMembershipBodyCreate siteMembershipBodyCreate = new SiteMembershipBodyCreate();
 		siteMembershipBodyCreate.setRole(RoleEnum.SITEMANAGER);
 		siteMembershipBodyCreate.setId(idpCode);
 		return siteApi.createSiteMembership(siteId, siteMembershipBodyCreate, null).getBody();
-	}*/
+	}
 }
